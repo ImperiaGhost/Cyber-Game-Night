@@ -780,5 +780,7 @@ def static_files(filename):
 if __name__ == "__main__":
     # create static/images dir if not exists so user can drop images there
     os.makedirs(os.path.join(os.getcwd(), "static", "images"), exist_ok=True)
-    print("Starting Cyber Trivia App — open http://127.0.0.1:5000")
-    app.run(debug=True)
+ 
+    print("Starting Cyber Trivia App — open http://127.0.0.1:5050")
+    app.run(debug=True, port=5050)
+    
