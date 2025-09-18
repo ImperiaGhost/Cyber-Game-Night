@@ -25,7 +25,7 @@ QUESTIONS = [
     # 3
     {"id":3, "text":"Which of the following is a common sign of a phishing email?",
      "options":["Unexpected request for credentials","Perfect grammar and personalization","Email from your personal account","Attachmentless email with only signature"],
-     "answer":0, "type":"mcq", "difficulty":"Beginner", "tgif":"📧🐟⚠️", "image":"/static/images/phish_example1.png"},
+     "answer":0, "type":"mcq", "difficulty":"Beginner", "tgif":"📧🐟⚠️", "image":"/static/images/phish_example1.jpg"},
     # 4
     {"id":4, "text":"What is the primary purpose of a firewall?",
      "options":["To physically protect the server room","To monitor and control incoming/outgoing network traffic","To perform backups","To speed up the internet"],
@@ -68,9 +68,9 @@ QUESTIONS = [
      "options":["Email the password","Write it on a sticky note","Use a password manager","Share via public chat room"],
      "answer":2, "type":"mcq", "difficulty":"Beginner", "tgif":"🔐📁", "image":None},
     # 15
-    {"id":15, "text":"What technique does 'brute force attack' use?",
-     "options":["Phishing users","Trying many possible passwords until success","Encrypting data","Distributing ransomware"],
-     "answer":1, "type":"mcq", "difficulty":"Beginner", "tgif":"💪🔎", "image":None},
+    {"id":15, "text":"Is this a Phishing Email?",
+     "options":["True","False"],
+     "answer":0, "type":"mcq", "difficulty":"Beginner", "tgif":"💪🔎", "image":"/static/images/Mail1.jpg"},
     # 16
     {"id":16, "text":"What does 'XSS' stand for in web security?",
      "options":["Cross-site Scripting","Extended Secure Socket","Cross-site Safeguard","Executable Script Syntax"],
@@ -153,8 +153,9 @@ QUESTIONS = [
      "options":["MD5","SHA-1","SHA-256","CRC32"],
      "answer":2, "type":"mcq", "difficulty":"Intermediate", "tgif":"🔏🧮", "image":None},
     # 37
-    {"id":37, "text":"True or False: An IDS (Intrusion Detection System) can block traffic like an IPS (Intrusion Prevention System).",
-     "options":["True","False"], "answer":1, "type":"tf", "difficulty":"Intermediate", "tgif":"🖥️🚨", "image":None},
+    {"id":37, "text":"Is this a Phishing Email?",
+     "options":["True","False"],
+     "answer":0, "type":"mcq", "difficulty":"Beginner", "tgif":"💪🔎", "image":"/static/images/Mail2.jpg"},
     # 38
     {"id":38, "text":"Which of these helps protect data at rest?",
      "options":["Network monitoring","Full-disk encryption","Firewalls alone","Open ports"],
@@ -295,8 +296,9 @@ QUESTIONS = [
     {"id":78, "text":"True or False: Default credentials should be changed before deploying devices.",
      "options":["True","False"], "answer":0, "type":"tf", "difficulty":"Beginner", "tgif":"🔑⚠️", "image":None},
     # 79
-    {"id":79, "text":"Which tool helps manage software dependencies and known vulnerabilities?",
-     "options":["Dependency scanner / SCA tool","Plain text editor","Paint","Calculator"], "answer":0, "type":"mcq", "difficulty":"Intermediate", "tgif":"📦🔎", "image":None},
+    {"id":79, "text":"Is this a Phishing Email?",
+     "options":["True","False"],
+     "answer":0, "type":"mcq", "difficulty":"Beginner", "tgif":"💪🔎", "image":"/static/images/Mail3.jpg"},
     # 80
     {"id":80, "text":"Which log type is most useful for investigating network-based intrusions?",
      "options":["Application logs only","Network flow and firewall logs","Word docs","Presentation files"], "answer":1, "type":"mcq", "difficulty":"Intermediate", "tgif":"📊🧾", "image":None},
@@ -368,8 +370,9 @@ QUESTIONS = [
     {"id":102, "text":"Which of the following is considered social engineering via phone calls?",
      "options":["Vishing","Smishing","Pharming","Spoofing"], "answer":0, "type":"mcq", "difficulty":"Intermediate", "tgif":"📞🎣", "image":None},
     # 103
-    {"id":103, "text":"True or False: 'Smishing' is phishing delivered via SMS.",
-     "options":["True","False"], "answer":0, "type":"tf", "difficulty":"Beginner", "tgif":"📱🎣", "image":None},
+    {"id":103, "text":"Is this a Phishing Email?",
+     "options":["True","False"],
+     "answer":0, "type":"mcq", "difficulty":"Beginner", "tgif":"💪🔎", "image":"/static/images/Mail4.jpg"},
     # 104
     {"id":104, "text":"What's the purpose of 'hash salting'?",
      "options":["Make hash deterministic","Make brute-force against hashed passwords more difficult","Reduce hash size","Speed up hashing"],
@@ -398,8 +401,9 @@ QUESTIONS = [
     {"id":111, "text":"Which metric measures how quickly a system recovers after an incident?",
      "options":["MTTR (Mean Time To Recover)","MTBF","TTR","RTT"], "answer":0, "type":"mcq", "difficulty":"Intermediate", "tgif":"⏱️🔁", "image":None},
     # 112
-    {"id":112, "text":"True or False: Certificate pinning can help mitigate MitM attacks in mobile apps.",
-     "options":["True","False"], "answer":0, "type":"tf", "difficulty":"Intermediate", "tgif":"📌🔒", "image":None},
+    {"id":112, "text":"Is this a Phishing Email?",
+     "options":["True","False"],
+     "answer":0, "type":"mcq", "difficulty":"Beginner", "tgif":"💪🔎", "image":"/static/images/Mail5.jpg"},
     # 113
     {"id":113, "text":"Which of these is a good practice when sharing code publicly?",
      "options":["Include API keys and secrets","Remove secrets and sanitize configs","Share database passwords","Expose internal IPs without context"], "answer":1, "type":"mcq", "difficulty":"Intermediate", "tgif":"💻🔍", "image":None},
@@ -606,8 +610,7 @@ INDEX_HTML = """
     </div>
 
     <footer>
-      Tip: Add phishing images into <code>static/images/</code> and set question.image to point to them. The TGIF emoji per question helps theme tiles visually.
-    </footer>
+     </footer>
   </div>
 
 <script>
@@ -700,7 +703,7 @@ INDEX_HTML = """
       dom.classList.add('correct');
       // update score
       const team = activeTeam.value;
-      scores[team] += 1;
+      scores[team] += 10;
       updateScores();
     } else {
       dom.classList.add('wrong');
